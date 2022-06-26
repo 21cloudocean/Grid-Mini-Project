@@ -180,7 +180,7 @@ Cards
 .card-footer span {
   color: var(--primaryColor);
 }
-@media screen and (min-width: 786px) {
+/* @media screen and (min-width: 786px) {
   .cards-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -192,4 +192,22 @@ Cards
   .cards-center {
     grid-template-columns: repeat(3, 1fr);
   }
+} */
+/* 用auto-fit和auto-fill代替media query调整布局 */
+.cards-center {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  /* 三列 */
+  /* grid-template-columns: repeat(auto-fill, minmax(368px, 1fr)); */
+  /* 四列 */
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+  justify-content: flex-start;
+  align-items: stretch;
+}
+/* 让所有卡片有相同的高度 */
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
 }
